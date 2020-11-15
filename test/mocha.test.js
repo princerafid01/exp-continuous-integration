@@ -1,6 +1,8 @@
 const assert = require('assert');
 const puppeteer = require('puppeteer');
 
+console.log(process.env.TEST);
+
 class Browser {
   async init() {
     this.browser = await puppeteer.launch({
@@ -18,7 +20,7 @@ class Browser {
   }
 }
 
-describe('rejaul karim', () => {
+describe('Browser test', () => {
   before(async () => {
     this.browser = new Browser();
     await this.browser.init();
@@ -28,8 +30,8 @@ describe('rejaul karim', () => {
     await this.browser.close();
   });
 
-  describe('vai jekhane', () => {
-    it('amra nai sekhane', async () => {
+  describe('example.com', () => {
+    it('gets the title', async () => {
       const title = await this.browser.navigation();
       assert.strictEqual(title, 'Example Domain');
     });

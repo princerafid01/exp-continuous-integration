@@ -14,11 +14,19 @@ jobs:
           node-version: '14'
       - name: install packages
         run: npm install
-      - name: xvfb
+      - name: install xvfb
+        uses: GabrielBB/xvfb-action@v1
+        with:
+          run: node -v
+      - name: Jest Test
         uses: GabrielBB/xvfb-action@v1
         with:
           run: npm run test:jest
-      - name: xvfb
+          env:
+            TEST: ${{ secrets.TEST }}
+      - name: Mocha Test
         uses: GabrielBB/xvfb-action@v1
         with:
           run: npm run test:mocha
+          env:
+            TEST: ${{ secrets.TEST }}
