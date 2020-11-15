@@ -15,8 +15,8 @@ jobs:
       - name: xvfb
         uses: GabrielBB/xvfb-action@v1
         with:
-          run: npm test:jest
+          run: npm run test:jest
       - name: xvfb
         uses: GabrielBB/xvfb-action@v1
         with:
-          run: npm test:mocha
+          run: npm run test:mocha
