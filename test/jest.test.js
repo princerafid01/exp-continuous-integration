@@ -9,6 +9,7 @@ let browser, page;
 beforeAll(async () => {
   browser = await puppeteer.launch({
     headless: false,
+    args: ['--no-sandbox', '--disable-dev-shm-usage'],
   });
   page = await browser.newPage();
 });
@@ -17,7 +18,7 @@ afterAll(async () => {
   await browser.close();
 });
 
-test('Load a page that has captcha in it', async () => {
+test('Load example.com', async () => {
   const respnse = await page.goto('https://example.com/');
   const content = await respnse.text();
   expect(content.search('example')).toBeGreaterThan(0);

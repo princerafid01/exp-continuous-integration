@@ -14,4 +14,4 @@ RUN yarn install
 COPY . .
 
 ENV DISPLAY :99
-CMD Xvfb :99 -screen 0 1024x768x16 & yarn test:mocha
+CMD Xvfb :99 -screen 0 1024x768x16 & yarn test:jest
