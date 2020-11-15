@@ -22,11 +22,11 @@ jobs:
         uses: GabrielBB/xvfb-action@v1
         with:
           run: npm run test:jest
-          env:
-            TEST: ${{ secrets.TEST }}
+        env:
+          TEST: ${{ secrets.TEST }}
       - name: Mocha Test
         uses: GabrielBB/xvfb-action@v1
         with:
           run: npm run test:mocha
-          env:
-            TEST: ${{ secrets.TEST }}
+        env:
+          TEST: ${{ secrets.TEST }}
