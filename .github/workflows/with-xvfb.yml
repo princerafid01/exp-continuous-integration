@@ -8,8 +8,11 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
-      - name: install
+      - name: install node
         uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+      - name: install packages
         with:
           run: npm ci
       - name: xvfb
