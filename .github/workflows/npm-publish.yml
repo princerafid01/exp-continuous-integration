@@ -9,13 +9,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
-        uses: actions/checkout@v2
-      - name: install
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - run: sudo apt-get install xvfb
+      - uses: borales/actions-yarn@v2.0.0
         with:
-          run: npm ci
-      - name: xvfb
-        uses: GabrielBB/xvfb-action@v1
+          cmd: install
+      - uses: borales/actions-yarn@v2.0.0
         with:
-          run: npm test
+          cmd: xvfb-run --auto-servernum mocha test/sohomot-vai.test.js
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: xvfb-run --auto-servernum jest test/mizan-vai.test.js
