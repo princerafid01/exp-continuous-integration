@@ -13,6 +13,6 @@
   },
   "scripts": {
     "test:jest": "jest test/jest.test.js",
-    "test:mocha": "mocha test/jest.test.js"
+    "test:mocha": "mocha test/mocha.test.js"
   }
 }
