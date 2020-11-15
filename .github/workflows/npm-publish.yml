@@ -11,7 +11,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build
-        run: docker build -t back .
+        run: docker-compose build
+      - name: Run
+        run: docker-compose up
 #       - uses: actions/setup-node@v1
 #         with:
 #           node-version: '14.5.0'
