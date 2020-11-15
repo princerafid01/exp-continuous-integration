@@ -1,7 +1,7 @@
 const assert = require('assert');
 const puppeteer = require('puppeteer');
 
-console.log(`${process.env.TEST}`);
+console.log(process.env.TEST === 'test');
 
 class Browser {
   async init() {
