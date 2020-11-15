@@ -13,8 +13,7 @@ jobs:
         with:
           node-version: '14'
       - name: install packages
-        with:
-          run: npm ci
+        run: npm ci
       - name: xvfb
         uses: GabrielBB/xvfb-action@v1
         with:
