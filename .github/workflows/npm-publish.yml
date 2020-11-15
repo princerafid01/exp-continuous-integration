@@ -11,8 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
-      - uses: GabrielBB/xvfb-action@v1
         with:
           node-version: 12
+      - uses: GabrielBB/xvfb-action@v1
       - run: npm ci
       - run: npm test
