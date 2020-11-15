@@ -2,3 +2,5 @@ version: "3.8"
 services: 
   test:
     build: .
+    environment:
+      - TEST=${TEST}

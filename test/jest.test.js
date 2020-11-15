@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 
-console.log(process.env.TEST);
+console.log(`${process.env.TEST}`);
 
 jest.setTimeout(120000);
 
