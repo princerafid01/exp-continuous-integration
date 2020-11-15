@@ -1,0 +1,22 @@
+name: Node.js Package
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: install
+        uses: actions/setup-node@v1
+        with:
+          run: npm ci
+      - name: xvfb
+        uses: GabrielBB/xvfb-action@v1
+        with:
+          run: npm test:jest
+      - name: xvfb
+        uses: GabrielBB/xvfb-action@v1
+        with:
+          run: npm test:mocha
