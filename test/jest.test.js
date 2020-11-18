@@ -9,6 +9,7 @@ let browser, page;
 beforeAll(async () => {
   browser = await puppeteer.launch({
     headless: false,
+    // executablePath: '/bin/chromium',
     args: ['--no-sandbox', '--disable-dev-shm-usage'],
   });
   page = await browser.newPage();

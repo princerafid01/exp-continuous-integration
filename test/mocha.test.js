@@ -7,6 +7,7 @@ class Browser {
   async init() {
     this.browser = await puppeteer.launch({
       headless: false,
+      // executablePath: '/bin/chromium',
       args: ['--no-sandbox', '--disable-dev-shm-usage'],
     });
   }
